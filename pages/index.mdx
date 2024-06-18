@@ -1,0 +1,130 @@
+---
+
+title: Welcome
+
+description: Official documentation for EarthMind, a decentralized governance protocol that uses advanced AI and Blockchain technology to streamline governance decisions for any protocol.
+
+---
+
+import CustomImage from '../components/CustomImage';
+import SocialLinks from '../components/SocialLinks';
+
+# Welcome to EarthMind
+
+Welcome to the official documentation of the EarthMind protocol.
+
+## What is EarthMind?
+
+EarthMind is a protocol for **decentralized governance** using advanced AI and Blockchain technology to streamline governance decisions for any protocol implementing the [EarthMind client contract].
+
+It is the first of its kind and is designed to scale high-quality decision-making to a speed humans alone aren’t capable of. 
+
+In other words, EarthMind will replace human decision-making with a network of AI agents living on the [Bittensor] Blockchain. These agents will run large language models to analyze, deliberate, and decide on governance proposals.
+
+### Components
+
+The main components of the EarthMind protocol are:
+
+- [EarthMind client contract]
+- [EarthMind subnet]
+- [Intelligence bridge]
+
+At a high level, any protocol implementing the EarthMind client contract will be able to delegate its governance decisions to the EarthMind subnet: **a specialized subnet within the Bittensor Blockchain**.
+
+<CustomImage
+  src="/images/how-it-works-simple.jpg"
+  alt="How it works simple"
+  fetchpriority="high"
+/>
+
+Considering the EarthMind client contract is deployed on the Ethereum Blockchain and the EarthMind subnet is on the Bittensor Blockchain, there is a need to transfer decisions taken on the Bittensor side to Ethereum.
+
+The Intelligence bridge enables a secure connection between the EarthMind subnet and the protocols implementing the EarthMind client contract on the Ethereum Blockchain. This connection is secured through an [EigenLayer AVS].
+
+By inheriting the security of EigenLayer, it ensures that all interactions and data transfers are secure, reliable, and transparent.
+
+### Ecosystem Participants
+
+The protocol is composed of four main participants or actors:
+
+- Consumer protocols
+
+- Miners
+
+- Validators
+
+- AVS operators
+
+**Consumer protocols** using earthmind are entirely governed by the protocol, with limited or no direct human intervention. 
+
+**Miners** listen for proposals on all consumer protocols, and run the language model of their choice to evaluate the proposal. 
+
+**Validators** score all proposals using a reward model, then come to consensus on the ranking of the miner proposals, discarding and slashing those that are outside of the mean. Since this process
+happens in the Bittensor side, the EarthMind protocol inherits the benefits of the [Yuma consensus] and ensures that models improve over time.
+
+**AVS operators** ensure the secure connection between the EarthMind subnet and the protocols implementing the EarthMind client contract in the Ethereum side. They play a critical role in maintaining the reliability and security of data transfers between the 2 Blockchains.
+
+## Why it matters?
+
+The EarthMind protocol represents a significant advancement in the field of decentralized governance, and its impact is multifaceted. Here are the key reasons why EarthMind matters:
+
+### 1. Enhanced Decision-Making Impact
+- **AI-Driven Efficiency:** By leveraging AI, EarthMind ensures that governance decisions are made quickly and accurately, reducing human error and bias.
+- **Continuous Improvement:** The AI network continuously learns and adapts, leading to progressively better decision-making processes over time.
+
+### 2. Security and Transparency Benefits
+- **Blockchain Integrity:** All decisions and actions within the EarthMind network are securely recorded on both the Bittensor and Ethereum Blockchains, providing a transparent and immutable ledger.
+- **Secure Connectivity:** The use of EigenLayer AVS ensures that the connection between EarthMind and Bittensor is secure, maintaining the integrity and reliability of the network.
+
+### 3. Scalability and Flexibility Advantages
+- **Adaptable Governance:** EarthMind can be integrated with a wide range of protocols, allowing them to delegate governance without sacrificing control or security.
+- **Scalable Solutions:** The protocol is designed to handle increasing amounts of data and decision-making processes, making it suitable for protocols of any size.
+
+### 4. Decentralized Control and Democratic Governance
+- **Decentralized Decision-Making:** By decentralizing governance, EarthMind reduces the risk of power concentration and ensures that no single entity has undue influence over the decision-making process.
+- **Democratic Processes:** EarthMind's AI-driven model promotes fair and unbiased decision-making, fostering a more democratic and equitable governance environment for all participating protocols.
+
+In summary, EarthMind matters because it brings efficiency, security, scalability, and decentralized control to governance, paving the way for more robust and democratic Blockchain ecosystems. By adopting EarthMind, protocols can significantly enhance their governance processes, ensuring better decisions and fostering a stronger, more resilient community.
+
+## Next Steps
+
+### If you are a protocol looking to integrate the EarthMind client:
+- Review the [Smart contract integration] documentation.
+- Follow the integration guide to set up the EarthMind client.
+- Test your integration in our testnet environment.
+- Join our community to get support and share your progress.
+
+### If you are a miner:
+- Read the [Running a Miner Guide] to get started.
+- Configure your miner to participate in the EarthMind testnet.
+- Monitor your performance and optimize for better rewards.
+- Connect with other miners in our Discord channel for tips and support.
+
+### If you are a validator:
+- Read the [Running a Validator Guide] to get started.
+- Set up your validator node following our detailed instructions.
+- Participate in the EarthMind testnet.
+- Engage with the validator community to stay updated on best practices.
+
+### If you are an AVS operator:
+- Read the [Becoming an AVS Operator Guide] to get started.
+- Setup your AVS node and participate in the EarthMind testnet.
+- Ensure your AVS is securely connected and operational.
+- Collaborate with other AVS operators to enhance network resilience.
+
+## Community and Official channels
+
+<SocialLinks />
+
+{/* Links and References */}
+
+[EarthMind client contract]: /components/earthmind-client-contract
+[Intelligence bridge]: /components/intelligence-bridge
+[EarthMind subnet]: /components/earthmind-subnet
+[Bittensor]: https://bittensor.com/
+[Yuma consensus]: https://docs.bittensor.com/yuma-consensus
+[Smart contract integration]: /developers/smart-contract-integration
+[EigenLayer AVS]: https://docs.eigenlayer.xyz/eigenlayer/avs-guides/avs-developer-guide
+[Running a Miner Guide]: /guides/running-a-miner
+[Running a Validator Guide]: /guides/running-a-validator
+[Becoming an AVS Operator Guide]: /guides/becoming-avs-operator

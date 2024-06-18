@@ -1,0 +1,43 @@
+import CustomImage from '../components/CustomImage';
+
+# How it works
+
+The EarthMind protocol is a complex machine that combines multiple technologies to ensure a maximum level of decentralization and security.
+
+In order to understand how it works, let's analyze the full lifecycle of a `Governance request` from a Consumer protocol and learn how each component interacts with each other. 
+
+The following image illustrates this process:
+
+<CustomImage
+  src="/images/how-it-works-full.jpg"
+  alt="How it works full"
+  fetchpriority="high"
+/>
+
+Now let's describe each step:
+
+#### 1. Request Governance Decision
+When a protocol implementing the [EarthMind client contract] requires a governance decision, it sends a request to the EarthMind protocol.
+
+#### 2. Validators Listen for New Requests
+The EarthMind protocol has validators that continuously listen for new governance requests. These validators `"live"` in the EarthMind subnet, which is part of the [Bittensor] Blockchain.
+
+#### 3. Validators Query Miners
+Once a request is received, validators within the Bittensor subnet query miners to gather responses. These miners use various AI models to analyze the governance request and generate intelligent responses. Each miner’s response is scored by the validators based on its quality and relevance to the goals/culture of the Consumer protocol.
+
+#### 4. Validators Relay Scores
+The validators collect and relay their scores for the miner responses to the relayer. This step ensures that the best possible responses are considered for the final decision.
+
+#### 5. Aggregation of Validator Responses
+The relayer collects all the responses from the validators and aggregates them. This aggregated data is then prepared for final validation by requesting BLS (Boneh-Lynn-Shacham) signatures from the AVS operators to ensure integrity and consensus.
+
+#### 6. AVS Operators Validation
+AVS operators validate the aggregated responses by checking them against the Bittensor blockchain. They verify the accuracy and integrity of the responses and provide a valid BLS signature if they agree with the results. This step ensures the security and reliability of the governance decision process.
+
+#### 7. Return of Validated Response
+The final validated response, now bearing a BLS aggregated signature, is returned to the Consumer protocol that initially requested the governance decision. This response represents the consensus reached by the EarthMind protocol, secured and validated by the Bittensor blockchain and the AVS operators.
+
+{/* Links and References */}
+
+[EarthMind client contract]: /components/earthmind-client-contract
+[Bittensor]: https://bittensor.com/

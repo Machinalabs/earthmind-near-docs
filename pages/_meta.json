@@ -1,0 +1,36 @@
+{
+    "--- separator1": {
+        "title": "Introduction",
+        "type": "separator"
+    },
+    "index": "Welcome",
+    "features": "Features",
+    "roadmap": "Roadmap",
+    "vision": "Vision",
+    "--- separator2": {
+        "title": "Protocol Overview",
+        "type": "separator"
+    },
+    "architecture": "Architecture",
+    "how-it-works": "How it Works",
+    "--- separator3": {
+        "title": "",
+        "type": "separator"
+    },
+    "components": "Components",
+    "--- separator4": {
+        "title": "",
+        "type": "separator"
+    },
+    "developers": "Developers",
+    "--- separator5": {
+        "title": "",
+        "type": "separator"
+    },
+    "guides": "Guides",
+    "--- separator6": {
+        "title": "",
+        "type": "separator"
+    },
+    "security": "Security"
+}

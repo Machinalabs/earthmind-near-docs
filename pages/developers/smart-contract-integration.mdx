@@ -1,0 +1,57 @@
+# Smart Contract Integration
+
+The easiest way to integrate the EarthMind protocol is by using the EarthMind SDK client. A set of solidity contracts that make easier the integration.
+
+In order to explain the integration, let's imagine a protocol called "Singular NFTs". This protocol is an autonomous NFT collection where users request to add 
+items to the collection. However, only if the decentralized intelligence network approves the request, then the items are added.
+
+
+```js
+// SPDX-License-Identifier: MIT
+pragma solidity 0.8.19;
+
+import { EarthMindClient } from "earthmind/periphery/client/EarthMindClient.sol";
+
+contract SingularNFTs is EarthMindClient{
+    event RequestedAddItemToCollection(address indexed requester, bytes32 requestId);
+
+    constructor(address _earthMindProtocol) EarthMindClient(_earthMindProtocol) payable {
+        _setDecodingTypes("bytes32");
+        _enableEarthMindModule(Module.OC);
+        _enableEarthMindModule(Module.TextPrompting);
+        _setProtocolCulture("The goal of the protocol is to enable the creation of the most unique NFTs in the world.");
+    }
+
+    function requestAddItemToCollection(bytes32 ipfsHash) external {
+        // <Implement your application logic to include items in the collection>
+
+        // i.e call _sendRequest, store the request Id and wait for the callback to be executed
+
+        bytes32 newRequestId = _sendRequest(abi.encodePacked(ipfsHash));
+
+        emit RequestedAddItemToCollection(msg.sender, newRequestId);
+    }
+
+    function _earthMindCallback(bytes32 requestId, bool result, string memory reason) internal override{
+        // <Implement your application logic>
+    }
+}
+```
+
+#### Things to consider
+
+The constructor is calling 3 functions:
+
+- _setDecodingTypes
+
+- _enableEarthMindModule 
+
+- _setProtocolCulture
+
+`_setDecodingTypes` is a function that developers need to implement in order to configure how the function parameters are going to be decoded by the miners and validators of the EarthMind network.
+
+In this example, the `request` function is called `requestAddItemToCollection` 
+
+
+For a complete example, please visit this github repository.
+

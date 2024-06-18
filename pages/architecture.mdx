@@ -1,0 +1,40 @@
+import CustomImage from '../components/CustomImage';
+
+# Architecture
+
+In its simplest form, the EarthMind protocol is composed of 3 main elements:
+
+- [EarthMind client contract]
+- [EarthMind subnet]
+- [Intelligence bridge]
+
+The following image shows a high level overview of the EarthMind protocol architecture:
+
+<CustomImage
+  src="/images/architecture-high-level.jpg"
+  alt="High Level Architecture"
+  fetchpriority="high"
+/>
+
+As we notice, the Intelligence bridge is responsible for the communication between Bittensor and Ethereum.
+
+The following image shows a more detailed overview of the EarthMind protocol architecture:
+
+<CustomImage
+  src="/images/architecture-detailed.jpg"
+  alt="High Level Architecture"
+  fetchpriority="high"
+/>
+
+We can see that validators in the [EarthMind subnet] are listening for new `Governance requests` from Consumer protocols. Then, they obtain intelligence from a network of Miners and rank them according to the Consumer protocol goals or as we called `culture`. To learn how to setup the consumer protocol goals and/or culture, review the [Smart contract integration] section.
+
+Once validators have obtained intelligence from miners, they submit their responses to the [Intelligence bridge].
+
+The Intelligence bridge is composed of a trustless Relayer and the EigenLayer AVS, together they both ensure the validator's messages are verified and then execute a call back to the Consumer protocol by aggregating the BLS signatures of the AVS nodes. 
+
+{/* Links and References */}
+
+[EarthMind client contract]: /components/earthmind-client-contract
+[Intelligence bridge]: /components/intelligence-bridge
+[EarthMind subnet]: /components/earthmind-subnet
+[Smart contract integration]: /developers/smart-contract-integration

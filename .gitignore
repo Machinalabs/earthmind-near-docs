@@ -1,0 +1,12 @@
+# Next 
+.next
+
+# NodeJS
+node_modules
+
+# Environment
+.idea
+.DS_Store
+
+# Developer
+TODO.md
